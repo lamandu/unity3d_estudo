@@ -122,6 +122,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &20537595 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4756412272145002, guid: 4b3bb44effa49480d8d18049684cc33a, type: 3}
+  m_PrefabInstance: {fileID: 58937129}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &29153935 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2749393230397707077, guid: 6d0c9a8b2f44b364c9b853ee4374ece8, type: 3}
@@ -218,7 +223,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 4610746654156704, guid: 4b3bb44effa49480d8d18049684cc33a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 327760937}
+    - targetCorrespondingSourceObject: {fileID: 4756412272145002, guid: 4b3bb44effa49480d8d18049684cc33a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 320446333}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1884102019447498, guid: 4b3bb44effa49480d8d18049684cc33a, type: 3}
       insertIndex: -1
@@ -235,6 +246,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1884102019447498, guid: 4b3bb44effa49480d8d18049684cc33a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 108428681}
+    - targetCorrespondingSourceObject: {fileID: 1884102019447498, guid: 4b3bb44effa49480d8d18049684cc33a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 108428683}
   m_SourcePrefab: {fileID: 100100000, guid: 4b3bb44effa49480d8d18049684cc33a, type: 3}
 --- !u!1 &108428673 stripped
 GameObject:
@@ -338,6 +352,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!4 &108428682 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4610746654156704, guid: 4b3bb44effa49480d8d18049684cc33a, type: 3}
+  m_PrefabInstance: {fileID: 58937129}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &108428683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108428673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a703584cf89d29343b946f625fa7bd52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bala: {fileID: 8146096457455911446, guid: 7f8e1dc080587e8419037ef905002886, type: 3}
+  CanoDaArma: {fileID: 327760936}
 --- !u!1001 &143533602
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -399,6 +432,99 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35861510587b7489780fe86970823679, type: 3}
+--- !u!1001 &320446332
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 20537595}
+    m_Modifications:
+    - target: {fileID: 1517127174525834, guid: 204cc7a7baee34a84a3b725be2689093, type: 3}
+      propertyPath: m_Name
+      value: Revolver_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834280811438730, guid: 204cc7a7baee34a84a3b725be2689093, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834280811438730, guid: 204cc7a7baee34a84a3b725be2689093, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834280811438730, guid: 204cc7a7baee34a84a3b725be2689093, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834280811438730, guid: 204cc7a7baee34a84a3b725be2689093, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834280811438730, guid: 204cc7a7baee34a84a3b725be2689093, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834280811438730, guid: 204cc7a7baee34a84a3b725be2689093, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834280811438730, guid: 204cc7a7baee34a84a3b725be2689093, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834280811438730, guid: 204cc7a7baee34a84a3b725be2689093, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834280811438730, guid: 204cc7a7baee34a84a3b725be2689093, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834280811438730, guid: 204cc7a7baee34a84a3b725be2689093, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 204cc7a7baee34a84a3b725be2689093, type: 3}
+--- !u!4 &320446333 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4834280811438730, guid: 204cc7a7baee34a84a3b725be2689093, type: 3}
+  m_PrefabInstance: {fileID: 320446332}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &327760936
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 327760937}
+  m_Layer: 0
+  m_Name: CanoDaArma
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &327760937
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 327760936}
+  serializedVersion: 2
+  m_LocalRotation: {x: 1.2326877e-15, y: -1.8534396e-15, z: 0.00000008940696, w: 1}
+  m_LocalPosition: {x: 0.037, y: 2.252, z: 2.414}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 108428682}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &351175003 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: f1c4e7cad77043d4eb1da10b11215f6a, type: 3}
