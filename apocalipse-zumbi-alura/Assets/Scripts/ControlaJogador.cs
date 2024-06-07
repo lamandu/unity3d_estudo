@@ -7,7 +7,6 @@ using UnityEngine;
 public class ControlaJogador : MonoBehaviour
 {
     public float velocidade = 10;
-    private float limiarMovimento = 0.1f; // Limiar para considerar como movimento
     Vector3 direcao;
 
    // Start is called before the first frame update
@@ -19,13 +18,13 @@ public class ControlaJogador : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float eixoX = Input.GetAxis("Horizontal");
-        float eixoZ = Input.GetAxis("Vertical");
+        float eixoX = Input.GetAxisRaw("Horizontal");
+        float eixoZ = Input.GetAxisRaw("Vertical");
 
         direcao = new Vector3(eixoX, 0, eixoZ);
 
-        // Verifica se a magnitude da direção é maior que o limiar de movimento
-        if (direcao.magnitude > limiarMovimento)
+        // Verifica se a magnitude da direï¿½ï¿½o ï¿½ maior que o limiar de movimento
+        if (direcao != Vector3.zero)
         {
            // transform.Translate(direcao * velocidade * Time.deltaTime);
             GetComponent<Animator>().SetBool("movendo", true);
@@ -38,9 +37,6 @@ public class ControlaJogador : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (direcao.magnitude > limiarMovimento)
-        {
-            GetComponent<Rigidbody>().MovePosition(GetComponent<Rigidbody>().position + (direcao * velocidade * Time.deltaTime));
-        }
+         GetComponent<Rigidbody>().MovePosition(GetComponent<Rigidbody>().position + (direcao * velocidade * Time.deltaTime));
     }
 }
