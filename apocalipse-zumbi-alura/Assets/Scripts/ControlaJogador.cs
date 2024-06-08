@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class ControlaJogador : MonoBehaviour
 {
-    public float velocidade = 10;
-    Vector3 direcao;
+    public float Velocidade = 10;
+    private Vector3 direcao;
 
     public LayerMask MascaraChao;
 
@@ -55,7 +55,7 @@ public class ControlaJogador : MonoBehaviour
     {
          GetComponent<Rigidbody>().MovePosition
          (GetComponent<Rigidbody>().position + 
-         (direcao * velocidade * Time.deltaTime));
+         (direcao * Velocidade * Time.deltaTime));
     
         Ray raio = Camera.main.ScreenPointToRay(Input.mousePosition);
         Debug.DrawRay(raio.origin, raio.direction * 100, Color.red);
