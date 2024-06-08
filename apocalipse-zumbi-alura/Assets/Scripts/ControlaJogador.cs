@@ -16,11 +16,16 @@ public class ControlaJogador : MonoBehaviour
 
     public bool Vivo = true;
 
+    private  Animator animator;
+
+    private Rigidbody rigidBody;
 
    // Start is called before the first frame update
    void Start()
     {
         Time.timeScale = 1;
+        animator = GetComponent<Animator>();
+        rigidBody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -35,11 +40,11 @@ public class ControlaJogador : MonoBehaviour
         if (direcao != Vector3.zero)
         {
            // transform.Translate(direcao * velocidade * Time.deltaTime);
-            GetComponent<Animator>().SetBool("movendo", true);
+            animator.SetBool("movendo", true);
         }
         else
         {
-            GetComponent<Animator>().SetBool("movendo", false);
+            animator.SetBool("movendo", false);
         }
 
         if(!Vivo)
@@ -53,8 +58,8 @@ public class ControlaJogador : MonoBehaviour
 
     void FixedUpdate()
     {
-         GetComponent<Rigidbody>().MovePosition
-         (GetComponent<Rigidbody>().position + 
+         rigidBody.MovePosition
+         (rigidBody.position + 
          (direcao * Velocidade * Time.deltaTime));
     
         Ray raio = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -70,7 +75,7 @@ public class ControlaJogador : MonoBehaviour
             // calculo da rotacao
             Quaternion novaRotacao = Quaternion.LookRotation(posicaoMiraJogador);
             // adiciona rotacao ao personagem.
-            GetComponent<Rigidbody>().MoveRotation(novaRotacao);
+            rigidBody.MoveRotation(novaRotacao);
         }
 
 
