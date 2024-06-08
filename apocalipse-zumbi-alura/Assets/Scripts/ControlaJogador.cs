@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ControlaJogador : MonoBehaviour
 {
@@ -11,10 +12,15 @@ public class ControlaJogador : MonoBehaviour
 
     public LayerMask MascaraChao;
 
+    public GameObject TextoGameOver;
+
+    public bool Vivo = true;
+
+
    // Start is called before the first frame update
    void Start()
     {
-
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame
@@ -34,6 +40,14 @@ public class ControlaJogador : MonoBehaviour
         else
         {
             GetComponent<Animator>().SetBool("movendo", false);
+        }
+
+        if(!Vivo)
+        {
+            if(Input.GetButtonDown("Submit"))
+            {
+                SceneManager.LoadScene("game");    
+            }
         }
     }
 

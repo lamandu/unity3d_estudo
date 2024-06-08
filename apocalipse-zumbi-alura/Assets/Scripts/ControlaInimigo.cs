@@ -23,15 +23,30 @@ public class ControlaInimigo : MonoBehaviour
     void FixedUpdate() { 
          // calculo distancia entre o inimigo e o meu jogador
         float distancia = Vector3.Distance(transform.position, Jogador.transform.position);
+
+        var direcao = Jogador.transform.position - transform.position;
+        // calculo rotacao baseada na direcao que o inimigo tem que ir.
+         Quaternion novaRotacao = Quaternion.LookRotation(direcao);
+         GetComponent<Rigidbody>().MoveRotation(novaRotacao);
         // distancia para perseguir o jogador
         if(distancia > 2.5) // considero o Radius dos colisores, 1 do inimigo e 1 do jogador
         {
-            var direcao = Jogador.transform.position - transform.position;
-                GetComponent<Rigidbody>().MovePosition
+            // perseguindo
+            GetComponent<Rigidbody>().MovePosition
                 (GetComponent<Rigidbody>().position + direcao.normalized * Velocidade * Time.deltaTime);
-            // calculo rotacao baseada na direcao que o inimigo tem que ir.
-            Quaternion novaRotacao = Quaternion.LookRotation(direcao);
-            GetComponent<Rigidbody>().MoveRotation(novaRotacao);
+            
+            GetComponent<Animator>().SetBool("Atacando", false);
         }
+        else 
+        {
+            GetComponent<Animator>().SetBool("Atacando", true);    
+        }
+    }
+
+    void AtacaJogador()
+    {
+        Time.timeScale = 0;
+        Jogador.GetComponent<ControlaJogador>().TextoGameOver.SetActive(true);
+        Jogador.GetComponent<ControlaJogador>().Vivo = false;
     }
 }
