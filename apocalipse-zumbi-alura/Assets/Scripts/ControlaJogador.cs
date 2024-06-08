@@ -9,6 +9,8 @@ public class ControlaJogador : MonoBehaviour
     public float velocidade = 10;
     Vector3 direcao;
 
+    public LayerMask MascaraChao;
+
    // Start is called before the first frame update
    void Start()
     {
@@ -37,6 +39,26 @@ public class ControlaJogador : MonoBehaviour
 
     void FixedUpdate()
     {
-         GetComponent<Rigidbody>().MovePosition(GetComponent<Rigidbody>().position + (direcao * velocidade * Time.deltaTime));
+         GetComponent<Rigidbody>().MovePosition
+         (GetComponent<Rigidbody>().position + 
+         (direcao * velocidade * Time.deltaTime));
+    
+        Ray raio = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Debug.DrawRay(raio.origin, raio.direction * 100, Color.red);
+        
+        RaycastHit impacto;
+        if(Physics.Raycast(raio,out impacto, 100, MascaraChao)) 
+        {
+            // ponto de impacto baseado na posicao do meu jogador (impacto.point - transform.position;)
+            Vector3 posicaoMiraJogador = impacto.point - transform.position;
+            // igualando altura com o jogador.
+            posicaoMiraJogador.y = transform.position.y; 
+            // calculo da rotacao
+            Quaternion novaRotacao = Quaternion.LookRotation(posicaoMiraJogador);
+            // adiciona rotacao ao personagem.
+            GetComponent<Rigidbody>().MoveRotation(novaRotacao);
+        }
+
+
     }
 }
