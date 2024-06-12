@@ -14,13 +14,13 @@ public class ControlaJogador : MonoBehaviour
 
     public GameObject TextoGameOver;
 
-    public bool Vivo = true;
-
     private  Animator animator;
 
     private Rigidbody rigidBody;
 
-    public int Vida;
+    public int Vida = 100;
+
+    public ControlaInterface controlaInterface;
 
    // Start is called before the first frame update
    void Start()
@@ -49,7 +49,7 @@ public class ControlaJogador : MonoBehaviour
             animator.SetBool("movendo", false);
         }
 
-        if(!Vivo)
+        if (Vida <=0 )
         {
             if(Input.GetButtonDown("Submit"))
             {
@@ -81,8 +81,14 @@ public class ControlaJogador : MonoBehaviour
         }
     }
 
-    public void TomaDano() 
+    public void TomaDano(int dano) 
     {
-        Vida-=30;
+        Vida-=dano;
+        controlaInterface.AtualizarSliderVidaJogador();
+        if (Vida <=0 )
+        {
+            Time.timeScale = 0;
+            TextoGameOver.SetActive(true);
+        }
     }
 }
