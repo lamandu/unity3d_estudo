@@ -20,6 +20,8 @@ public class ControlaJogador : MonoBehaviour
 
     private Rigidbody rigidBody;
 
+    public int Vida;
+
    // Start is called before the first frame update
    void Start()
     {
@@ -77,7 +79,10 @@ public class ControlaJogador : MonoBehaviour
             // adiciona rotacao ao personagem.
             rigidBody.MoveRotation(novaRotacao);
         }
+    }
 
-
+    public void TomaDano() 
+    {
+        Vida-=30;
     }
 }
